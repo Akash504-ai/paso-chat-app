@@ -12,7 +12,7 @@ PASO is a production-level real-time communication platform inspired by WhatsApp
 
 ## Architecture
 
-The application follows a decoupled micro-service inspired architecture to handle real-time sockets and ML processing efficiently.
+The application follows a scalable decoupled architecture designed to efficiently manage real-time communication, AI services, and ML-based moderation.
 
 ```mermaid
 graph TD
