@@ -20,10 +20,12 @@ graph TD
 %% ================= FRONTEND =================
 subgraph FRONTEND [Frontend Layer]
 A1[React App]
-A2[State Management]
-A3[UI: Tailwind + DaisyUI]
-A4[Routing]
-A5[Socket Client]
+A2[State Management - Zustand]
+A3[UI - Tailwind CSS + DaisyUI]
+A4[React Router]
+A5[Socket.io Client]
+A6[AI Chat Interface]
+A7[Voice/Video Call UI]
 end
 
 %% ================= BACKEND =================
@@ -46,6 +48,7 @@ C2[User Collection]
 C3[Message Collection]
 C4[Group Collection]
 C5[Report Collection]
+C6[Status Collection]
 end
 
 %% ================= ML SERVICE =================
@@ -53,6 +56,7 @@ subgraph ML [ML Moderation Service]
 D1[FastAPI Server]
 D2[Text Analysis Model]
 D3[Toxicity Detection]
+D4[Spam Detection]
 end
 
 %% ================= EXTERNAL =================
@@ -61,6 +65,16 @@ E1[Groq API - AI Chat]
 E2[ZegoCloud - Voice/Video]
 E3[Cloudinary - Media Storage]
 E4[Brevo - Email Service]
+end
+
+%% ================= DEVOPS =================
+subgraph DEVOPS [CI/CD Pipeline]
+F1[GitHub Actions]
+F2[Frontend CI]
+F3[Backend CI]
+F4[ESLint Validation]
+F5[Production Build Validation]
+F6[Pull Request Validation]
 end
 
 %% ================= FLOW =================
@@ -84,6 +98,7 @@ B5 --> B6
 
 %% Database connections
 B6 --> C3
+B6 --> C6
 B7 --> C4
 B8 --> C2
 B9 --> C5
@@ -92,24 +107,26 @@ C1 --> C2
 C1 --> C3
 C1 --> C4
 C1 --> C5
+C1 --> C6
 
 %% ML Service
 B6 -->|Analyze Message| D1
 D1 --> D2
 D2 --> D3
+D2 --> D4
 
 %% External APIs
 B6 --> E1
+B6 --> E2
 B6 --> E3
 B3 --> E4
-B6 --> E2
 
 %% AI Chat
-A1 -->|AI Chat Request| B6
+A6 -->|AI Request| B6
 B6 --> E1
 
 %% Calling Feature
-A1 -->|Call Init| E2
+A7 -->|Initialize Call| E2
 
 %% Media Upload
 A1 -->|Upload Media| B6
@@ -117,6 +134,22 @@ B6 --> E3
 
 %% Email Flow
 B3 -->|Send Email| E4
+
+%% ================= CI/CD FLOW =================
+
+F1 --> F2
+F1 --> F3
+
+F2 --> F4
+F2 --> F5
+
+F3 --> F4
+
+F2 --> A1
+F3 --> B1
+
+F6 --> F2
+F6 --> F3
 ```
 
 ## Screenshots
