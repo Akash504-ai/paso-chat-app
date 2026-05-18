@@ -3,6 +3,8 @@
 <br/>
 
 ![License](https://img.shields.io/badge/license-MIT-green)
+![Frontend CI](https://github.com/CodePlaygroundHub/paso-chat-app/actions/workflows/frontend-ci.yml/badge.svg)
+![Backend CI](https://github.com/CodePlaygroundHub/paso-chat-app/actions/workflows/backend-ci.yml/badge.svg)
 ![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen)
 # PASO – AI-Powered Real-Time Chat App (React + Node.js + Socket.io + ML Integration)
 
@@ -279,6 +281,14 @@ Services:
 - Backend: Render
 
 - ml-service: Render
+
+## CI/CD Pipeline
+
+- GitHub Actions powered CI workflows
+- Automated frontend lint + production build validation
+- Automated backend lint validation
+- Pull request validation before merge
+- npm ci based deterministic installs
 
 ## Environment Variables
 
