@@ -55,7 +55,9 @@ const CallRoom = () => {
   const handleEndCall = () => {
     try {
       zegoRef.current?.leaveRoom();
-    } catch {}
+    } catch (err) {
+      console.error("Error leaving call room:", err);
+    }
     zegoRef.current = null;
     endCall();
   };
