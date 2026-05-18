@@ -127,7 +127,6 @@ messageSchema.pre("validate", function (next) {
   // must be personal OR group
   if (!this.receiverId && !this.groupId) {
     return next(new Error("Message must have receiverId or groupId"));
-    1;
   }
 
   // cannot be both

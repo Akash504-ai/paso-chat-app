@@ -5,7 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "dev": "nodemon src/index.js",
-    "start": "node src/index.js"
+    "start": "node src/index.js",
+    "lint": "eslint ."
   },
   "keywords": [],
   "author": "",
@@ -14,6 +15,7 @@
   "dependencies": {
     "@getbrevo/brevo": "^4.0.1",
     "@google/generative-ai": "^0.24.1",
+    "@socket.io/redis-adapter": "^8.3.0",
     "axios": "^1.13.5",
     "bcryptjs": "^2.4.3",
     "cloudinary": "^2.5.1",
@@ -28,10 +30,14 @@
     "mongoose": "^8.8.1",
     "multer": "^2.0.2",
     "nodemailer": "^8.0.1",
+    "redis": "^5.12.1",
     "resend": "^6.9.2",
     "socket.io": "^4.8.1"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.4.0",
+    "globals": "^17.6.0",
     "nodemon": "^3.1.7"
   }
 }
