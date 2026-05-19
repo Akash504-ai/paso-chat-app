@@ -352,6 +352,20 @@ npm install
 npm run dev
 ```
 
+## Documentation
+
+Detailed project documentation is available inside the `docs/` directory.
+
+| Document | Description |
+|---|---|
+| `docs/ARCHITECTURE.md` | Complete system architecture |
+| `docs/BACKEND.md` | Backend structure and workflow |
+| `docs/FRONTEND.md` | Frontend architecture and state management |
+| `docs/API.md` | REST API documentation |
+| `docs/SOCKETS.md` | Socket.io realtime architecture |
+| `docs/ML_SERVICE.md` | Machine learning moderation service |
+| `docs/SETUP.md` | Local development setup guide |
+
 ## Project Highlights
 
 - Real-time chat with Socket.io
